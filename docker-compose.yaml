@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.1.2 
+    entrypoint: /opt/keycloak/bin/kc.sh start-dev --import-realm
+    container_name: demo-keycloak
+    volumes:
+      - ./src/main/resources/kc/realm-export.json:/opt/keycloak/data/import/tira-realm.json
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_HOSTNAME_STRICT=false
+      - KC_HTTP_ENABLED=true
+    ports:
+      - 8080:8080
+

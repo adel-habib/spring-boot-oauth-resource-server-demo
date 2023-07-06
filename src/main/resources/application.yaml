@@ -1,0 +1,11 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/itemis
+          jwk-set-uri: http://localhost:8080/realms/itemis/protocol/openid-connect/certs
+          audiences: demo
+
+server:
+  port: 8081
