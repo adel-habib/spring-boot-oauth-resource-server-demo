@@ -66,7 +66,7 @@ A Postman collection has been prepared for testing purposes. You can find this c
 
 To run the Resource Server application, execute the following commands from the root directory of the project:
 
-1. Compile the application: `mvn clean compile`
+1. Compile the application: `mvn clean package`
 2. Run the application: `java -jar target/resource-server-demo-0.0.1-Snapshot.jar`
 
 ## API Endpoints
