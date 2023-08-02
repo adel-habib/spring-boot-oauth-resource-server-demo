@@ -43,7 +43,6 @@ class ResourceServerDemoApplicationTests {
     public void setUp() {
         RestAssured.port = port;
         this.token = getAccessToken("test", "test");
-        System.out.println("Got a token: " + token);
     }
 
     @Test
