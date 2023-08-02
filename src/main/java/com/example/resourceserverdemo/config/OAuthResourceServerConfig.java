@@ -1,4 +1,4 @@
-package com.example.resourceserverdemo;
+package com.example.resourceserverdemo.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -42,7 +42,7 @@ public class OAuthResourceServerConfig {
                             // Make route only accessible to users with role "admin"
                         .requestMatchers(HttpMethod.GET, "/admin/**").hasAuthority("ROLE_admin")
                             // make route only accessible to users who are either an admin or a moderator 
-                        .requestMatchers(HttpMethod.POST, "/moderate/**").hasAnyAuthority("ROLE_admin", "ROLE_moderator")
+                        .requestMatchers(HttpMethod.GET, "/moderator/**").hasAnyAuthority("ROLE_admin", "ROLE_moderator")
                             // All other routes are accessible to any user with a valid access token
                         .anyRequest().authenticated()
                 )
